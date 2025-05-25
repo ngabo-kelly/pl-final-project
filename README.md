@@ -83,6 +83,7 @@ Triggers were used to enforce business rules and security:
 
 
 ### ✔️ Key Triggers
+<img width="959" alt="trigger to restrict in weekdays" src="https://github.com/user-attachments/assets/fb8253c0-bb16-4773-8928-64b2ca591530" />
 
 - **BEFORE INSERT:** Validate patient data
 - **AFTER DELETE:** Log deletions from `Appointments`
