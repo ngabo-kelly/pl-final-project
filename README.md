@@ -27,6 +27,7 @@ The **Hospital Management System (HMS)** is an Oracle-based solution developed u
 
 ## 🧩 Logical Data Model (ERD)
 
+
 - **Entities:**
   - `Patients`, `Doctors`, `Appointments`, `Medical_Records`, `Billing`, `Departments`, `Users`, `Audit_Log`
 - **Design Notes:**
