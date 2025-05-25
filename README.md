@@ -1,85 +1,100 @@
-# pl-final-project
+# 🏥 Hospital Management System – PL/SQL Capstone Project
 
-# Hospital Management System – Business Process Modeling
-
-## 📌 Objective
-
-This project presents a **Business Process Model** for a **Hospital Management System (HMS)** using BPMN. The model demonstrates how Management Information Systems (MIS) are used to support hospital workflows, from patient registration to discharge. It aims to improve operational efficiency, centralize information, and support real-time decision-making.
+**Course:** Advanced Database Programming and Auditing (INSY 8311)  
+**Lecturer:** Eric Maniraguha  
+**Student:** NGABO MULISA KELLY  
+**Student ID:** 27145  
+**Academic Year:** 2024–2025  
+**Project Type:** Final Capstone Project
 
 ---
 
-## 🗂️ Scope
+## 📘 Overview
 
-The modeled process covers key hospital operations:
+The **Hospital Management System (HMS)** is an Oracle-based solution developed using PL/SQL. It aims to automate hospital operations including patient management, appointment scheduling, billing, staff monitoring, and secure auditing. The system integrates logical data modeling, advanced PL/SQL features, triggers, and database auditing to ensure smooth, secure, and accountable medical data processing.
 
-- Patient Registration
-- Diagnosis and Treatment
-- Prescription Fulfillment
+---
+
+## 🎯 Objectives
+
+- Automate routine hospital operations
+- Secure data access and log all critical events
+- Prevent unauthorized DML operations during sensitive periods
+- Use BPMN for process modeling and ERD for database design
+- Demonstrate advanced PL/SQL development skills
+
+---
+
+## 🧩 Logical Data Model (ERD)
+
+- **Entities:**
+  - `Patients`, `Doctors`, `Appointments`, `Medical_Records`, `Billing`, `Departments`, `Users`, `Audit_Log`
+- **Design Notes:**
+  - Fully normalized to 3NF
+  - Primary keys and foreign keys ensure relational integrity
+  - Relationships reflect real-world operations (e.g., one doctor → many appointments)
+
+---
+
+## 🔄 BPMN – Business Process Model
+
+The BPMN diagram models hospital workflows such as:
+
+- Patient Registration  
+- Appointment Scheduling  
+- Doctor Consultation  
+- Lab Testing  
 - Billing and Discharge
+- <img width="956" alt="bpmn " src="https://github.com/user-attachments/assets/3384a4b0-5c6a-4e17-96a8-7c135c55de03" />
+ 
 
-The process shows how data flows across hospital departments and how MIS ensures seamless integration and task automation.
-
----
-
-## 🧑‍🤝‍🧑 Key Entities
-
-- **Receptionist** – Registers new patients and initiates the workflow.
-- **Doctor** – Performs diagnosis and issues prescriptions.
-- **Pharmacy** – Provides prescribed medication.
-- **Billing Department** – Handles invoicing and payments.
-- **Patient Database** – Stores patient records, diagnoses, prescriptions, and billing info.
-- **MIS System** – Facilitates coordination, automation, and centralized data access.
+**Actors:** Patient, Receptionist, Doctor, Lab Technician, Cashier    
+**Value:** BPMN helps visualize operations and detect inefficiencies early in system design.
 
 ---
 
-## 🧭 Process Overview (Using BPMN and Swimlanes)
+## 🛠️ DDL & DML Scripts
+<img width="959" alt="ddl create and alter table" src="https://github.com/user-attachments/assets/a325f9b5-671c-42af-a45c-121c31c011ba" />
 
-- The process is modeled using **BPMN (Business Process Model and Notation)**.
-- **Swimlanes** are used to separate roles/departments, clarifying responsibilities.
-- Notation includes:
-  - **Start/End Events**
-  - **Tasks**
-  - **Gateways** (for decisions)
-  - **Data Objects** (forms, prescriptions, reports)
 
----
+### 📌 DDL (Data Definition Language)
 
-## 🔄 Logical Flow
+- `CREATE TABLE`, `ALTER`, `DROP`
+- Defined keys, constraints (PRIMARY, FOREIGN, CHECK), and indexes
+- 
 
-1. Patient arrives at the hospital.
-2. Receptionist registers the patient in the MIS.
-3. Doctor accesses patient info, conducts diagnosis, and prescribes treatment.
-4. Pharmacy receives prescription and provides medication.
-5. Billing department prepares invoice and processes payment.
-6. Patient is discharged after payment.
+### 🧾 DML (Data Manipulation Language)
 
-All interactions are managed through the MIS platform, ensuring up-to-date records and efficient processing.
+- `INSERT INTO`, `UPDATE`, `DELETE`, `SELECT`
+- Test data added to simulate realistic hospital operations
+- Sample queries:
+  - Find patient visits by doctor
+  - Generate unpaid bills report
+  - Schedule a doctor’s availability
+  - <img width="958" alt="dml insert,update and delete" src="https://github.com/user-attachments/assets/be909163-43dd-4f9c-b3b8-c63650b6ca5a" />
+
 
 ---
 
-## ✅ MIS Benefits
+## 🔐 Triggers & Restrictions
 
-- **Improved Decision-Making**: Real-time access to patient and treatment data.
-- **Operational Efficiency**: Automated workflows reduce delays and errors.
-- **Centralized Data**: One system for all departments.
-- **Process Transparency**: Clear roles and responsibilities improve collaboration.
+Triggers were used to enforce business rules and security:
+<img width="959" alt="trigger implementation" src="https://github.com/user-attachments/assets/a16f6161-d035-474e-b226-8a222731d17d" />
 
----
 
-## 📁 Files
+### ✔️ Key Triggers
 
- ![image alt] (https://github.com/ngabo-kelly/pl-final-project/blob/main/bpmn%20.png) – BPMN diagram of the hospital process.
+- **BEFORE INSERT:** Validate patient data
+- **AFTER DELETE:** Log deletions from `Appointments`
+- **INSTEAD OF UPDATE:** For secure views (if any)
+- **Compound Trigger:** Blocks INSERT, UPDATE, DELETE by employees:
+  - During weekdays (Mon–Fri)
+  - On public holidays (stored in `HOLIDAYS` table)
 
----
-
-## 🛠️ Tools Used
-
-- **BPMN Modeling Tool** (e.g., Camunda Modeler, Bizagi Modeler)
-- **GitHub** – For version control and project documentation.
-
----
-
-## 📄 License
-
-This project is for academic and educational purposes.
-
+#### 🔒 Example Logic
+```plsql
+IF TO_CHAR(SYSDATE, 'DY', 'NLS_DATE_LANGUAGE=ENGLISH') IN ('MON','TUE','WED','THU','FRI')
+   OR SYSDATE IN (SELECT holiday_date FROM HOLIDAYS)
+THEN
+   RAISE_APPLICATION_ERROR(-20001, 'Action not allowed on weekdays or public holidays');
+END IF;
