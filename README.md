@@ -100,55 +100,20 @@ To support modular design and report generation, **stored procedures** and **cur
 ### 📋 Stored Procedures
 
 #### 🔹 1. `add_patient` – Register new patients
-```plsql
-CREATE OR REPLACE PROCEDURE add_patient (
-    p_patient_id       IN PATIENTS.PATIENT_ID%TYPE,
-    p_full_name        IN PATIENTS.FULL_NAME%TYPE,
-    p_gender           IN PATIENTS.GENDER%TYPE,
-    p_date_of_birth    IN PATIENTS.DATE_OF_BIRTH%TYPE,
-    p_phone_number     IN PATIENTS.PHONE_NUMBER%TYPE
-)
-IS
-BEGIN
-    INSERT INTO PATIENTS (PATIENT_ID, FULL_NAME, GENDER, DATE_OF_BIRTH, PHONE_NUMBER)
-    VALUES (p_patient_id, p_full_name, p_gender, p_date_of_birth, p_phone_number);
-    DBMS_OUTPUT.PUT_LINE('Patient registered successfully.');
-EXCEPTION
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
-END;
-```
+
+![procedures](https://github.com/user-attachments/assets/1d92d7c4-c161-4c7e-bbde-4797ba0c670f)
+
 
 #### 🔹 2. `generate_bill` – Insert billing details
-```plsql
-CREATE OR REPLACE PROCEDURE generate_bill (
-    p_patient_id   IN BILLING.PATIENT_ID%TYPE,
-    p_amount       IN BILLING.AMOUNT%TYPE,
-    p_method       IN BILLING.PAYMENT_METHOD%TYPE
-)
-IS
-BEGIN
-    INSERT INTO BILLING (BILL_ID, PATIENT_ID, AMOUNT, PAYMENT_METHOD, BILL_DATE)
-    VALUES (BILL_SEQ.NEXTVAL, p_patient_id, p_amount, p_method, SYSDATE);
-    DBMS_OUTPUT.PUT_LINE('Bill generated successfully.');
-EXCEPTION
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Billing error: ' || SQLERRM);
-END;
-```
+
+
 
 ---
 
 ### 🔄 Cursors
 
 #### 🔸 1. `get_patient_visits` – Retrieve a patient’s appointment history
-```plsql
-DECLARE
-    CURSOR patient_visits_cur IS
-        SELECT a.APPOINTMENT_ID, a.APPOINTMENT_DATE, d.FULL_NAME AS DOCTOR
-        FROM APPOINTMENTS a
-        JOIN DOCTORS d ON a.DOCTOR_ID = d.DOCTOR_ID
-        WHERE a.PATIENT_ID = 1001;
+
 
     v_appt_id       APPOINTMENTS.APPOINTMENT_ID%TYPE;
     v_appt_date     APPOINTMENTS.APPOINTMENT_DATE%TYPE;
