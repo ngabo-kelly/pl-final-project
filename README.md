@@ -68,7 +68,7 @@ All interactions are managed through the MIS platform, ensuring up-to-date recor
 
 ## 📁 Files
 
-- `HOSPITAL MANAGEMENT DATABASE.bpmn` – BPMN diagram of the hospital process.
+- `![image alt] ()` – BPMN diagram of the hospital process.
 
 ---
 
