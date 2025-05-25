@@ -62,7 +62,8 @@ The BPMN diagram models hospital workflows such as:
 
 - `CREATE TABLE`, `ALTER`, `DROP`
 - Defined keys, constraints (PRIMARY, FOREIGN, CHECK), and indexes
-- 
+
+ 
 
 ### 🧾 DML (Data Manipulation Language)
 
