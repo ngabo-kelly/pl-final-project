@@ -68,7 +68,7 @@ All interactions are managed through the MIS platform, ensuring up-to-date recor
 
 ## 📁 Files
 
-- `![image alt] ()` – BPMN diagram of the hospital process.
+- `![image alt] (https://github.com/ngabo-kelly/pl-final-project/blob/main/bpmn%20.png)` – BPMN diagram of the hospital process.
 
 ---
 
