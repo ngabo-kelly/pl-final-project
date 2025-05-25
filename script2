@@ -1,0 +1,411 @@
+Starting HospitalDB creation...
+
+
+PL/SQL procedure successfully completed.
+
+Dropping existing tables if they exist...
+
+
+PL/SQL procedure successfully completed.
+
+Error creating Department: ORA-00907: missing right parenthesis
+Critical error in table creation: ORA-00907: missing right parenthesis
+
+BEGIN
+*
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+ORA-06512: at line 125
+ORA-06512: at line 13
+ORA-06512: at line 4
+
+https://docs.oracle.com/error-help/db/ora-00907/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-00907/
+https://docs.oracle.com/error-help/db/ora-06512/
+      INSERT INTO Department VALUES (1, 'Cardiology', 'Block A');
+                  *
+ERROR at line 6:
+ORA-06550: line 6, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 6, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 7, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 7, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 18, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 18, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 19, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 19, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 30, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 30, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 31, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 31, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 42, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 42, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 43, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 43, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 54, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 54, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 55, column 19:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 55, column 7:
+PL/SQL: SQL Statement ignored
+
+https://docs.oracle.com/error-help/db/ora-06550/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-06550/
+      SELECT COUNT(*) INTO v_count FROM Department;
+                                        *
+ERROR at line 12:
+ORA-06550: line 12, column 41:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 12, column 7:
+PL/SQL: SQL Statement ignored
+ORA-06550: line 15, column 41:
+PL/SQL: ORA-00942: table or view does not exist
+ORA-06550: line 15, column 7:
+PL/SQL: SQL Statement ignored
+
+https://docs.oracle.com/error-help/db/ora-06550/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-06550/
+   CREATE TABLE DOCTORS (
+   *
+ERROR at line 5:
+ORA-06550: line 5, column 4:
+PLS-00103: Encountered the symbol "CREATE" when expecting one of the following:
+
+   ( begin case declare end exception exit for goto if loop mod
+   null pragma raise return select update while with
+   <an identifier> <a double-quoted delimited-identifier>
+   <a bind variable> << continue close current delete fetch lock
+   insert open rollback savepoint set sql execute commit forall
+   merge standard pipe purge json_object
+
+https://docs.oracle.com/error-help/db/ora-06550/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-06550/
+https://docs.oracle.com/error-help/db/pls-00103/
+   CREATE TABLE DOCTORS (
+   *
+ERROR at line 5:
+ORA-06550: line 5, column 4:
+PLS-00103: Encountered the symbol "CREATE" when expecting one of the following:
+
+   ( begin case declare end exception exit for goto if loop mod
+   null pragma raise return select update while with
+   <an identifier> <a double-quoted delimited-identifier>
+   <a bind variable> << continue close current delete fetch lock
+   insert open rollback savepoint set sql execute commit forall
+   merge standard pipe purge json_object
+
+https://docs.oracle.com/error-help/db/ora-06550/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-06550/
+https://docs.oracle.com/error-help/db/pls-00103/
+   CREATE TABLE DOCTORS (
+   *
+ERROR at line 5:
+ORA-06550: line 5, column 4:
+PLS-00103: Encountered the symbol "CREATE" when expecting one of the following:
+
+   ( begin case declare end exception exit for goto if loop mod
+   null pragma raise return select update while with
+   <an identifier> <a double-quoted delimited-identifier>
+   <a bind variable> << continue close current delete fetch lock
+   insert open rollback savepoint set sql execute commit forall
+   merge standard pipe purge json_object
+
+https://docs.oracle.com/error-help/db/ora-06550/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-06550/
+https://docs.oracle.com/error-help/db/pls-00103/
+   CREATE TABLE DOCTORS (
+   *
+ERROR at line 5:
+ORA-06550: line 5, column 4:
+PLS-00103: Encountered the symbol "CREATE" when expecting one of the following:
+
+   ( begin case declare end exception exit for goto if loop mod
+   null pragma raise return select update while with
+   <an identifier> <a double-quoted delimited-identifier>
+   <a bind variable> << continue close current delete fetch lock
+   insert open rollback savepoint set sql execute commit forall
+   merge standard pipe purge json_object
+
+https://docs.oracle.com/error-help/db/ora-06550/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-06550/
+https://docs.oracle.com/error-help/db/pls-00103/
+   CREATE TABLE DOCTORS (
+   *
+ERROR at line 5:
+ORA-06550: line 5, column 4:
+PLS-00103: Encountered the symbol "CREATE" when expecting one of the following:
+
+   ( begin case declare end exception exit for goto if loop mod
+   null pragma raise return select update while with
+   <an identifier> <a double-quoted delimited-identifier>
+   <a bind variable> << continue close current delete fetch lock
+   insert open rollback savepoint set sql execute commit forall
+   merge standard pipe purge json_object
+
+https://docs.oracle.com/error-help/db/ora-06550/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-06550/
+https://docs.oracle.com/error-help/db/pls-00103/
+
+Table DEPARTMENT created.
+
+
+Table DOCTOR created.
+
+
+Table PATIENT created.
+
+
+Table MEDICAL_RECORD created.
+
+
+Table APPOINTMENT created.
+
+
+Table ROOM created.
+
+
+Table ADMISSION created.
+
+
+1 row inserted.
+
+
+Error starting at line : 80 in command -
+INSERT INTO Department VALUES ('D001', 'Cardiology', 'Block A')
+Error report -
+ORA-00001: unique constraint (MULISA.SYS_C008220) violated
+
+https://docs.oracle.com/error-help/db/ora-00001/
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-00001/
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
